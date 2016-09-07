@@ -5,6 +5,8 @@ import Header from '../header';
 import { toggleTodo } from '../../actions/todos';
 if(process.env.WEBPACK) require('./index.scss');
 
+import Button from 'muicss/lib/react/button';
+
 class Home extends Component {
 	render() {
 		const { dispatch, todos } = this.props;
@@ -17,12 +19,12 @@ class Home extends Component {
 				{todos.map((todo) => (
 					<div key={ todo.id }>
 						<span style={ (todo.checked) ? { textDecoration: 'line-through' } : {} }>{ todo.text } </span>
-						<button onClick={() => dispatch(toggleTodo(todo.id))}>Toggle</button>
+						<Button onClick={() => dispatch(toggleTodo(todo.id))}>Toggle</Button>
 					</div>
 				))}
 				<br/>
 				<Link to='/page'>
-					<button>Go to page</button>
+					<Button color="primary">Go to page</Button>
 				</Link>
 			</div>
 		);

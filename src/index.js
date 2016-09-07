@@ -7,6 +7,8 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import reducers from './reducers';
 import routes from './routes';
 
+import 'muicss/lib/css/mui.min.css';
+
 const store = createStore(reducers);
 const history = syncHistoryWithStore(browserHistory, store);
 

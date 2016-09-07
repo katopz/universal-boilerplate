@@ -36,16 +36,23 @@ module.exports = {
 				test: /\.scss/,
 				loader: 'style!css!sass!postcss',
 				include: path.resolve(__dirname, 'src')
+			},
+			{
+				test: /[\/\\](node_modules|global)[\/\\].*\.css$/,
+				loaders: [
+					'style?sourceMap',
+					'css'
+				]
 			}
 		]
 	},
     postcss: function() {
         return [autoprefixer];
-    },
+    }/*,
 	resolve: {
 		alias: {
 			'react': 'preact-compat',
 			'react-dom': 'preact-compat'
 		}
-	}
+	}*/
 };

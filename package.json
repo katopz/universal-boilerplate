@@ -43,8 +43,9 @@
     "url": "https://github.com/justinjung04/universal-boilerplate.git"
   },
   "dependencies": {
-    "preact": "^6.0.1",
-    "preact-compat": "^3.0.0",
+    "muicss": "^0.7.4",
+    "preact": "^6.0.2",
+    "preact-compat": "^3.0.1",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
     "react-redux": "^4.4.5",
