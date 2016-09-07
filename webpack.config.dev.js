@@ -41,5 +41,11 @@ module.exports = {
 	},
     postcss: function() {
         return [autoprefixer];
-    }
+    },
+	resolve: {
+		alias: {
+			'react': 'preact-compat',
+			'react-dom': 'preact-compat'
+		}
+	}
 };

@@ -23,20 +23,14 @@
     "babel-preset-stage-0": "^6.5.0",
     "copy-webpack-plugin": "^3.0.1",
     "cross-env": "^2.0.0",
-    "css-loader": "^0.23.1",
+    "css-loader": "^0.25.0",
     "eslint": "^3.1.1",
     "eslint-plugin-babel": "^3.3.0",
-    "eslint-plugin-react": "^5.2.2",
+    "eslint-plugin-react": "^6.2.0",
     "express": "^4.14.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "node-sass": "^3.8.0",
-    "postcss-loader": "^0.9.1",
-    "react": "^15.2.1",
-    "react-dom": "^15.2.1",
-    "react-redux": "^4.4.5",
-    "react-router": "^2.6.1",
-    "react-router-redux": "^4.0.5",
-    "redux": "^3.5.2",
+    "postcss-loader": "^0.11.1",
     "rimraf": "^2.5.4",
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",
@@ -47,5 +41,15 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/justinjung04/universal-boilerplate.git"
+  },
+  "dependencies": {
+    "preact": "^6.0.1",
+    "preact-compat": "^3.0.0",
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.6.1",
+    "react-router-redux": "^4.0.5",
+    "redux": "^3.5.2"
   }
 }
