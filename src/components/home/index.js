@@ -6,10 +6,11 @@ import { toggleTodo } from '../../actions/todos';
 if(process.env.WEBPACK) require('./index.scss');
 
 import Button from 'muicss/lib/react/button';
+import Chart from '../chart';
 
 class Home extends Component {
 	render() {
-		const { dispatch, todos } = this.props;
+		const { dispatch, todos, charts } = this.props;
 
 		return (
 			<div className='home'>
@@ -26,12 +27,13 @@ class Home extends Component {
 				<Link to='/page'>
 					<Button color="primary">Go to page</Button>
 				</Link>
+				<Chart { ...charts }/>
 			</div>
 		);
 	}
 }
 
 export default connect((state) => {
-	const { todos } = state;
-	return { todos };
+	const { todos, charts } = state;
+	return { todos, charts };
 })(Home);

@@ -18,10 +18,26 @@ module.exports = {
 				WEBPACK: true
 			}
 		}),
+		new webpack.optimize.OccurenceOrderPlugin(),
+		new webpack.optimize.DedupePlugin(),
 		new webpack.optimize.UglifyJsPlugin({
-			compressor: {
-				warnings: false
-			}
+			compress: {
+				pure_getters: true,
+				unsafe: true,
+				unsafe_comps: true,
+				screw_ie8: true,
+				warnings: false,
+				sequences: true,
+				dead_code: true,
+				conditionals: true,
+				booleans: true,
+				unused: true,
+				if_return: true,
+				join_vars: true,
+				drop_console: true
+			},
+			comments: false,
+			sourceMap: true
 		}),
 		new CopyWebpackPlugin([
 			{
@@ -42,6 +58,13 @@ module.exports = {
 				test: /\.scss/,
 				loader: ExtractTextPlugin.extract('style', 'css!sass!postcss'),
 				include: path.resolve(__dirname, 'src')
+			},
+			{
+				test: /[\/\\](node_modules|global)[\/\\].*\.css$/,
+				loaders: [
+					'style?sourceMap',
+					'css'
+				]
 			}
 		]
 	},

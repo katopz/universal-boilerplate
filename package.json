@@ -6,7 +6,8 @@
   "scripts": {
     "lint": "eslint ./src",
     "start": "cross-env NODE_ENV=development babel-node ./server.js",
-    "build": "rimraf dist && webpack --config ./webpack.config.prod.js",
+    "uild:prod": "rimraf dist && webpack --config ./webpack.config.prod.js",
+    "build": "npm run build:prod > webpack.stats.txt",
     "serve": "cross-env NODE_ENV=production babel-node ./server.js"
   },
   "author": "Justin Jung <justinjung04@gmail.com>",
@@ -43,6 +44,12 @@
     "url": "https://github.com/justinjung04/universal-boilerplate.git"
   },
   "dependencies": {
+    "d3": "^4.2.2",
+    "d3-array": "^1.0.1",
+    "d3-axis": "^1.0.3",
+    "d3-scale": "^1.0.3",
+    "d3-selection": "^1.0.2",
+    "d3-svg": "^0.2.0",
     "muicss": "^0.7.4",
     "preact": "^6.0.2",
     "preact-compat": "^3.0.1",
