@@ -2,11 +2,16 @@ const path = require('path');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 
+const ENV = process.env.NODE_ENV || 'production';
+const IS_DEV = ENV === 'development';
+
 module.exports = {
 	entry: [
 		'webpack-hot-middleware/client',
+		`webpack/hot/dev-server`,
 		path.resolve(__dirname, 'src')
 	],
+	devtool: IS_DEV ? 'cheap-module-eval-source-map' : 'source-map',
 	output: {
 		path: path.resolve(__dirname, 'src'),
 		filename: 'bundle.js',
