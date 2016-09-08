@@ -1,0 +1,16 @@
+
+> universal-boilerplate@2.0.0 build:prod /Users/katopz/git/universal-boilerplate
+> rimraf dist && webpack --config ./webpack.config.prod.js
+
+Hash: be046221efe149484d2a
+Version: webpack 1.13.2
+Time: 11950ms
+           Asset       Size  Chunks             Chunk Names
+       bundle.js     237 kB       0  [emitted]  main
+      bundle.css  270 bytes       0  [emitted]  main
+assets/image.jpg    1.84 kB          [emitted]  
+    + 130 hidden modules
+Child extract-text-webpack-plugin:
+        + 2 hidden modules
+Child extract-text-webpack-plugin:
+        + 2 hidden modules

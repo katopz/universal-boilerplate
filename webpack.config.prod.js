@@ -76,5 +76,11 @@ module.exports = {
 			'react': 'preact-compat',
 			'react-dom': 'preact-compat'
 		}
-	}*/
+	}*/,
+	resolve: {
+		alias: {
+            'react': 'react-lite',
+            'react-dom': 'react-lite'
+		}
+	}
 };
