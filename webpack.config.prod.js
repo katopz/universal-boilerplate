@@ -4,6 +4,9 @@ const autoprefixer = require('autoprefixer');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+const ENV = process.env.NODE_ENV || 'production';
+const IS_DEV = ENV === 'development';
+
 module.exports = {
 	entry: path.resolve(__dirname, 'src'),
 	output: {
@@ -11,6 +14,7 @@ module.exports = {
 		filename: 'bundle.js',
 		publicPath: '/'
 	},
+	devtool: IS_DEV ? 'cheap-module-eval-source-map' : 'source-map',
 	plugins: [
 		new webpack.DefinePlugin({
 			'process.env': {
