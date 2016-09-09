@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import * as actionCreators from '../reducers/action-creators';
+import * as actionCreators from '../../reducers/action-creators';
 import ScatterPlot from './scatter-plot';
 
 const styles = {
