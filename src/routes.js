@@ -1,11 +1,14 @@
-import React from 'react';
-import { Route, IndexRoute } from 'react-router';
-import Home from './components/home';
-import Page from './components/page';
+import React from 'react'
+import { Route } from 'react-router'
+import App from './containers/App'
+import UserPage from './containers/UserPage'
+import RepoPage from './containers/RepoPage'
 
 export default (
-	<Route path='/'>
-		<IndexRoute component={Home} />
-		<Route path='page' component={Page} />
-	</Route>
-);
+  <Route path="/" component={App}>
+    <Route path="/:login/:name"
+           component={RepoPage} />
+    <Route path="/:login"
+           component={UserPage} />
+  </Route>
+)

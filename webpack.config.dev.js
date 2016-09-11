@@ -53,11 +53,11 @@ module.exports = {
 	},
     postcss: function() {
         return [autoprefixer];
-    },
+    }/*,
 	resolve: {
 		alias: {
             'react': 'react-lite',
             'react-dom': 'react-lite'
 		}
-	}
+	}*/
 };

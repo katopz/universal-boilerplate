@@ -1,10 +1,11 @@
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
-import { match, RouterContext } from 'react-router';
-import reducers from './reducers';
 import routes from './routes';
+import { match, useRouterHistory } from 'react-router';
+import { syncHistoryWithStore } from 'react-router-redux';
+import Root from './containers/Root';
+import configureStore from './store/configureStore';
+import { createMemoryHistory } from 'history';
 
 export default (req, res) => {
 	match({ routes, location: req.url }, (error, redirectLocation, renderProps) => {
@@ -21,12 +22,16 @@ export default (req, res) => {
 							<title>My Universal App</title>
 						</header>
 						<body>
-							<div id='app'></div>
+							<div id='root'></div>
 							<script src='bundle.js'></script>
 						</body>
 					</html>
 				`);
 			} else if(process.env.NODE_ENV == 'production') {
+				const store = configureStore();
+				//const history = createHistory();
+				const history = useRouterHistory(createMemoryHistory)({});
+
 				res.status(200).send(`
 					<!doctype html>
 					<html>
@@ -35,11 +40,7 @@ export default (req, res) => {
 							<link rel='stylesheet' href='bundle.css'>
 						</header>
 						<body>
-							<div id='app'>${renderToString(
-								<Provider store={createStore(reducers)}>
-									<RouterContext {...renderProps} />
-								</Provider>
-							)}</div>
+							<div id='root'>${renderToString(<Root store={store} history={history} />)}</div>
 							<script src='bundle.js'></script>
 						</body>
 					</html>

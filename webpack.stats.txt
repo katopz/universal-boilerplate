@@ -1,18 +1,11 @@
 
-> universal-boilerplate@2.0.0 build:prod d:\git\universal-boilerplate
+> universal-boilerplate@2.0.0 build:prod /Users/katopz/git/universal-boilerplate
 > cross-env NODE_ENV=production && rimraf dist && webpack --config ./webpack.config.prod.js
 
-Hash: adac0d49998c9e7b7775
+Hash: 2fef02c3592396cf4a7f
 Version: webpack 1.13.2
-Time: 7871ms
-           Asset       Size  Chunks             Chunk Names
-       bundle.js     236 kB       0  [emitted]  main
-      bundle.css  308 bytes       0  [emitted]  main
-   bundle.js.map    1.45 MB       0  [emitted]  main
-  bundle.css.map   87 bytes       0  [emitted]  main
-assets/image.jpg    1.84 kB          [emitted]  
-    + 130 hidden modules
-Child extract-text-webpack-plugin:
-        + 2 hidden modules
-Child extract-text-webpack-plugin:
-        + 2 hidden modules
+Time: 10940ms
+        Asset     Size  Chunks             Chunk Names
+    bundle.js   157 kB       0  [emitted]  main
+bundle.js.map  1.25 MB       0  [emitted]  main
+    + 251 hidden modules
