@@ -1,14 +1,15 @@
 import React, { Component, PropTypes } from 'react'
+import Button from 'muicss/lib/react/button'
 
 export default class List extends Component {
   renderLoadMore() {
     const { isFetching, onLoadMoreClick } = this.props
     return (
-      <button style={{ fontSize: '150%' }}
+      <Button color="primary"
               onClick={onLoadMoreClick}
               disabled={isFetching}>
         {isFetching ? 'Loading...' : 'Load More'}
-      </button>
+      </Button>
     )
   }
 

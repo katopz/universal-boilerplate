@@ -1,4 +1,6 @@
 import React, { Component, PropTypes } from 'react'
+import Input from 'muicss/lib/react/input'
+import Button from 'muicss/lib/react/button'
 
 const GITHUB_REPO = 'https://github.com/reactjs/redux'
 
@@ -7,6 +9,7 @@ export default class Explore extends Component {
     super(props)
     this.handleKeyUp = this.handleKeyUp.bind(this)
     this.handleGoClick = this.handleGoClick.bind(this)
+    this.onTextFieldChange = this.onTextFieldChange.bind(this)
   }
 
   componentWillReceiveProps(nextProps) {
@@ -36,17 +39,23 @@ export default class Explore extends Component {
     this.props.onChange(this.getInputValue())
   }
 
+  onTextFieldChange(textfield) {
+    this.setInputValue(textfield.target.value)
+  }
+
   render() {
     return (
       <div>
         <p>Type a username or repo full name and hit 'Go':</p>
-        <input size="45"
+        <Input hint="Your Github username"
+               size="45"
                ref="input"
                defaultValue={this.props.value}
-               onKeyUp={this.handleKeyUp} />
-        <button onClick={this.handleGoClick}>
+               onKeyUp={this.handleKeyUp} 
+               onChange={this.onTextFieldChange} />
+        <Button color="primary" onClick={this.handleGoClick}>
           Go!
-        </button>
+        </Button>
         <p>
           Code on <a href={GITHUB_REPO} target="_blank">Github</a>.
         </p>
