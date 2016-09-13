@@ -33,7 +33,7 @@
     "css-loader": "^0.25.0",
     "eslint": "^3.5.0",
     "eslint-plugin-babel": "^3.3.0",
-    "eslint-plugin-react": "^6.2.0",
+    "eslint-plugin-react": "^6.2.1",
     "express": "^4.14.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "node-sass": "^3.9.3",
@@ -55,7 +55,7 @@
     "url": "https://github.com/justinjung04/universal-boilerplate.git"
   },
   "dependencies": {
-    "d3": "^4.2.2",
+    "d3": "^4.2.3",
     "d3-array": "^1.0.1",
     "d3-axis": "^1.0.3",
     "d3-scale": "^1.0.3",
