@@ -4,6 +4,8 @@ import { browserHistory } from 'react-router'
 import Explore from '../components/Explore'
 import { resetErrorMessage } from '../actions'
 
+import Chart from '../components/chart';
+
 class App extends Component {
   constructor(props) {
     super(props)
@@ -31,7 +33,7 @@ class App extends Component {
         <b>{errorMessage}</b>
         {' '}
         (<a href="#"
-            onClick={this.handleDismissClick}>
+          onClick={this.handleDismissClick}>
           Dismiss
         </a>)
       </p>
@@ -39,13 +41,14 @@ class App extends Component {
   }
 
   render() {
-    const { children, inputValue } = this.props
+    const { children, inputValue, charts  } = this.props
     return (
       <div>
+        <Chart { ...charts }/>
         <Explore value={inputValue}
-                 onChange={this.handleChange} />
+          onChange={this.handleChange} />
         <hr />
-        {this.renderErrorMessage()}
+        {this.renderErrorMessage() }
         {children}
       </div>
     )
@@ -64,7 +67,8 @@ App.propTypes = {
 function mapStateToProps(state, ownProps) {
   return {
     errorMessage: state.errorMessage,
-    inputValue: ownProps.location.pathname.substring(1)
+    inputValue: ownProps.location.pathname.substring(1), 
+    charts: state.charts
   }
 }
 
