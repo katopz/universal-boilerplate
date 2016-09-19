@@ -2,7 +2,6 @@ import React from 'react';
 import { renderToString } from 'react-dom/server';
 import routes from './routes';
 import { match, useRouterHistory } from 'react-router';
-import { syncHistoryWithStore } from 'react-router-redux';
 import Root from './containers/Root';
 import configureStore from './store/configureStore';
 import { createMemoryHistory } from 'history';

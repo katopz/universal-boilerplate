@@ -5,13 +5,12 @@
   "main": "src/index.js",
   "scripts": {
     "lint": "eslint ./src",
-    "start:prod": "cross-env NODE_ENV=production babel-node ./server.js",
-    "start:dev": "cross-env NODE_ENV=development babel-node ./server.js",
+    "serve:prod": "cross-env NODE_ENV=production babel-node ./server.js",
+    "prod": "npm run build:prod && npm run serve:prod",
+    "dev": "cross-env NODE_ENV=development babel-node ./server.js",
     "size": "cross-env NODE_ENV=production && rimraf dist && echo \"$(webpack --config ./webpack.config.prod.js --json | webpack-bundle-size-analyzer)\" > webpack.size.txt",
     "build:prod": "cross-env NODE_ENV=production && rimraf dist && webpack --config ./webpack.config.prod.js",
-    "dev": "npm run start:dev",
     "build": "npm run build:prod > webpack.stats.txt",
-    "serve": "cross-env NODE_ENV=production babel-node ./server.js",
     "start": "react-scripts start",
     "build:static": "react-scripts build"
   },
