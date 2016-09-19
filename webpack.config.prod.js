@@ -53,7 +53,7 @@ module.exports = {
 	],
 	module: {
 		loaders: [
-			{ 
+			{
 				test: /\.js$/,
 				loader: 'babel',
 				include: path.resolve(__dirname, 'src')
@@ -72,7 +72,7 @@ module.exports = {
 			}
 		]
 	},
-    postcss: function() {
+    postcss: function () {
         return [autoprefixer];
     }/*,
 	resolve: {

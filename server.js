@@ -5,7 +5,7 @@ import middleware from './src/middleware';
 
 const app = express();
 
-if(process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV === 'development') {
 	const config = require('./webpack.config.dev');
 	const compiler = webpack(config);
 	app.use(require('webpack-dev-middleware')(compiler, {
@@ -23,16 +23,16 @@ if(process.env.NODE_ENV === 'development') {
 	}));
 	app.use(require('webpack-hot-middleware')(compiler));
 	app.use(express.static(path.resolve(__dirname, 'src')));
-} else if(process.env.NODE_ENV === 'production') {
+} else if (process.env.NODE_ENV === 'production') {
 	app.use(express.static(path.resolve(__dirname, 'dist')));
 }
 
 app.get('*', middleware);
 
 app.listen(3000, '0.0.0.0', (err) => {
-	if(err) {
+	if (err) {
 		console.error(err);
 	} else {
-		console.info('Listening at http://localhost:3000');	
+		console.info('Listening at http://localhost:3000');
 	}
 });

@@ -34,7 +34,7 @@ module.exports = {
 				loader: 'babel',
 				include: path.resolve(__dirname, 'src'),
 				query: {
-					presets: [ 'react-hmre' ]
+					presets: ['react-hmre']
 				}
 			},
 			{
@@ -51,7 +51,7 @@ module.exports = {
 			}
 		]
 	},
-    postcss: function() {
+    postcss: function () {
         return [autoprefixer];
     }/*,
 	resolve: {

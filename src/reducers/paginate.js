@@ -14,7 +14,7 @@ export default function paginate({ types, mapActionToKey }) {
     throw new Error('Expected mapActionToKey to be a function.')
   }
 
-  const [ requestType, successType, failureType ] = types
+  const [requestType, successType, failureType] = types
 
   function updatePagination(state = {
     isFetching: false,
