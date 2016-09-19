@@ -4,7 +4,7 @@
 
 Hash: 130317b8eede552bdd7e
 Version: webpack 1.13.2
-Time: 8136ms
+Time: 7718ms
         Asset     Size  Chunks             Chunk Names
     bundle.js   215 kB       0  [emitted]  main
 bundle.js.map  1.46 MB       0  [emitted]  main
