@@ -22,8 +22,11 @@ module.exports = {
 				WEBPACK: true
 			}
 		}),
+		// Avoid publishing files when compilation fails
+		new webpack.NoErrorsPlugin(),
 		new webpack.optimize.OccurenceOrderPlugin(),
 		new webpack.optimize.DedupePlugin(),
+		new webpack.optimize.AggressiveMergingPlugin(),
 		new webpack.optimize.UglifyJsPlugin({
 			compress: {
 				pure_getters: true,
@@ -72,7 +75,7 @@ module.exports = {
 			}
 		]
 	},
-    postcss: function () {
+    postcss: () => {
         return [autoprefixer];
     }/*,
 	resolve: {
