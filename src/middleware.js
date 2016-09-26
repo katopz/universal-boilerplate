@@ -7,6 +7,12 @@ import configureStore from './store/configureStore'
 import { createMemoryHistory } from 'history'
 
 export default (req, res) => {
+	// External routes
+	if (['/auth/github', '/auth/github/callback'].indexOf(req.url) === 0) {
+		return;
+	}
+
+	// Internal routes
 	match({ routes, location: req.url }, (error, redirectLocation, renderProps) => {
 		if (error) {
 			res.status(500).send(error.message)
