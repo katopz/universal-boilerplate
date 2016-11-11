@@ -1,8 +1,8 @@
 {
 	"presets": [
 		"react",
-		"es2015-minimal",
-		"stage-0"
+		"es2015",
+		"stage-3"
 	],
 	"sourceMaps": true,
 	"retainLines": true,
