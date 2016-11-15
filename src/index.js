@@ -5,7 +5,7 @@ import { syncHistoryWithStore } from 'react-router-redux'
 import Root from './containers/Root'
 import configureStore from './store/configureStore'
 
-import 'muicss/lib/css/mui.min.css';
+import 'muicss/dist/css/mui.min.css';
 
 const store = configureStore()
 const history = syncHistoryWithStore(browserHistory, store)
