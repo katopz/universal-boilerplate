@@ -45,13 +45,13 @@ module.exports = {
 			},
 			comments: false,
 			sourceMap: true
-		}),
+		}),/*
 		new CopyWebpackPlugin([
 			{
 				from: path.resolve(__dirname, 'src', 'assets'),
 				to: path.resolve(__dirname, 'dist', 'assets')
 			}
-		]),
+		]),*/
 		new ExtractTextPlugin('bundle.css')
 	],
 	module: {
